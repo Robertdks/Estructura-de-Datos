@@ -1,0 +1,3 @@
+¿Qué condiciones son necesarias para que la operación longitud en una pila y/o en una cola
+sean de Orden constante?
+Para que la operación longitud  sea constante  en una pila o cola, deberiamos llevar una variable que vaya contando la cantidad de elementos que tiene una pila u nodo

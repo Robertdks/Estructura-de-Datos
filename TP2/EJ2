@@ -1,0 +1,109 @@
+2. Revise la siguiente especificación del TAD Pila y:
+a. Encuentre errores en su estructura, redacción, categorización o inconsistencia con la
+teoría.
+b. Proponga una versión corregida y justifique los cambios realizados.
+TAD Pilahai
+Igualdad Observacional
+Si a y b son dos pilas, a es igual a b si se cumple una de las siguientes condiciones:
+- a es vacía y b es vacía
+- tienen los mismos elementos.
+Usa
+Natural, Bool, Secuenciahai
+Parámetro Formal
+a
+Observadores básicos
+tamano(Pilahai) → Natural
+apilar(Pilahai, a) → None {Pos: la pila no esta vacia}
+tope(Pilahai) → a {Pre: la pila tiene al menos un elemento}
+Generadores
+vacia() → Pilahai {Post: La pila retornada esta vacia}
+1
+a_partir_de(Secuenciahai) → Pilahai
+{Post: La pila contiene apilados los elementos de la secuencia recibida}
+Otras operaciones
+desapilar(Pilahai) → Pilahai {Pre: la pila tiene al menos un elemento}
+es_vacia(Pilahai) → Bool
+Axiomas
+vacia(): Crea una Pila (sin elementos)
+a_partir_de(Secuenciahai s): crea una pila que contienen los elementos de la secuencia
+s
+apilar(Pilahai P, a elem): Apila en el tope de P el elemento elem
+tamano(Pilahai P): Retorna/devuelve la cantidad de elementos de la pila P
+es_vacia(Pilahai P): Retorna/devuelve verdadero si a Pila P esta vacia y falso en caso
+contrario
+tope(Pilahai P): retorna/devuelve el primer elemento de la pila P
+desapilar(Pilahai P): Quita el elemento que se encuentra en el tope de la Pila P
+Exporta
+vacia, a_partir_de, tope, tamano, apilar, desapilar, Natural
+
+Respuesta: 
+ a. Se detectan errores en la definición del TAD, como:
+    1. La igualdad Observacional no considera el oden de los elementos.
+    2. La operación apilar tiene un precondicion incorrecta.
+    3. inconsistencias en los tipos de retorno.
+    4. Definiciones informales en las axiomas.
+    5. Clasificación incorrecta de operaciones.7
+    6. Uso incorrecto del concepto de "primer elemento" en lugar de "tope"
+b. Corrección DEL TAD
+    TAD Pila <a>
+
+        - Igualdad Observacional
+            Dos pilas a y b son iguales si:
+            Ambas son vacias, o tienen los mismos elementos en el  mismo orden.
+        - Usa
+            Natural
+            Bool
+            Secuencia <a>
+        - Parametro Formal
+            a
+        - Observaciones básicos
+            Tamano(Pila<a>) -> Natural
+            tope(Pila<a>) -> a
+                Pre: La pila no está vacía
+            es_vacia(Pila<a>) -> Bool
+
+        - Generadores
+            vacia() -> Pila(a)
+                post: retorna una Pila vacia
+            apilar(pila<a> P, a elem) -> pila<a>
+                post: retorna una pila con elem agregado en el tope
+            a_partir_de(secuencia<a> s) -> Pila<a>
+                post: Retorna una pila con los elementos de s apilados respertando el orden
+            
+        - Otras operaciones
+
+            desapilar(Pila <a> P) -> Pila<a>
+                pre: la pila no este vacia.
+                post: retorna la pila sin el elemento del tope
+        
+        - Axiomas (Forma más formal)
+
+            es_vacia(vacia()) = verdadero
+            tamano(vacia()) = 0
+            tope(apilar(P, e)) = e
+            desapilar(apilar(P, e)) = P
+            es_vacia(apilar(P, e)) = falso
+            tamano(apilar(P, e)) = tamano(P) + 1
+
+        - Exporta 
+
+            vacia
+            a_partir_de4
+            apilar
+            desapilar
+            tope
+            tamano
+            es_vacia
+
+Se realizaron las siguientes correcciones:
+
+Se corrigió la igualdad observacional, incorporando el orden de los elementos.
+Se eliminó la precondición incorrecta de apilar.
+Se unificó el criterio de operaciones para que todas mantengan consistencia en sus retornos.
+Se reclasificó apilar como generador.
+Se corrigió la definición de tope.
+Se formalizaron los axiomas.
+Se corrigió la sección Exporta, eliminando elementos que no son operaciones del TAD.      
+
+
+        

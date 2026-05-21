@@ -1,0 +1,31 @@
+Usando la plantilla propuesta en clase especifique el TAD:
+a. lista enlazada
+    -Igualdad Observacional
+        Dos listas enlazadas a y b son iguales si y solo si tienen la misma longitud y contienen los mismos elementos en el mismo orden.
+    -Usa
+        Natural
+        Bool
+        Secuencia<a>
+    -Parámetro formal
+        a 
+    -Observadores
+        es_vacia(L) --> Bool
+        tamano(L) --> Natural
+        obtener(L,pos) --> Natural
+        buscar(L,elem) --> Bool
+    -Generadores
+        vacia() --> L
+        insertar(L,pos,elem) --> L
+        agregar_final(L,elem) --> L
+    -Otras operaciones
+        Eliminar(L,pos) --> Bool
+            -Pre verificar que el elem este en la lista.
+            -post: retorna un bool 
+        invertir (L) --> L
+        concatenar(L1, L2) --> L
+    -Axiomas
+        
+    -Exporta
+b. lista doblemente enlazada,
+c. fecha.
+

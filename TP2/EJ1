@@ -1,0 +1,103 @@
+1. Para cada uno de las siguientes estructuras lineales:
+Indique: 
+    a. cola
+    b. Lista enlazada
+    c. Lista doblemente enlazada
+    d. Cola doblemente terminada
+
+    - Caracteristicas de la estructura: Cantidad de elementos, si es homogénea p heterogénea, forma de acceso y otras que considere relevante para la estructura.
+    - Operaciones que "tienen sentido" para la estructura.
+    - Operaciones que "no tengan sentido" para la estructura.
+    - Operaciones "con sentido" pero indispensables.
+
+
+    1a. Cola
+        - Caracteristicas:
+            1. Cantidad de elementos: Dinamica (Puede crecer o decreser).
+            2. Tipo de datos: homogenea (Todos los elementos son del mismo tipo).
+            3. Forma de acceso: Restringido, solo se accede al frente o al final (cola o cabeza).
+            4. Organizacion: sigue el principio FIFO (Fist In, First Out)
+            5. Encapsulamiento: No se conoce la implementacion interna, solo sus operaciones.
+        - Operaciones que tienen sentido:
+            1. Encolar(e) -> Agrega un elemento al Final.
+            2. Desencolar() -> Elimina el elemento de frente.
+            3. Frente() -> Devuelve el primer elemento.
+            4. Es_vacia() -> Indica si esta vacia.
+            5. Tmano() -> Devuelve la cantidad de elementos.
+        - Operaciones que no tienen Sentido:
+            1. Insertar en una posicion intermedia.
+            2. Eliminar un elemento del medio
+            3. Acceder directamente a cualquier elemento que no sea el frente.
+            -> Porque rompe el comportamiento FIFO
+        - Operaciones con sentido no Indispensables
+            1. Vaciar() -> Elimina todos los elementos.
+            2. Copiar() -> Genera una copia de la cola
+            3. Mostrar() -> Recorre los elementos
+   1b. Lista Enlazada
+        - Caracteristicas:
+            1. Cantidad de elementos: dinamica.
+            2. Tipo de datos: Homogoneo
+            2. Forma de acceso: Secuencial.7
+            3. Organizacion: Elementos enlazados mediante nodos (cada nodo apunta al siguiente)
+            4. No permite acceso directo por indice (hay  que recorrerla)
+        - Operaciones que tienen sentido:
+            1. Insertar(pos,e)
+            2. Eliminar(pos)
+            3. Buscar(e)
+            4. Recorrer()
+            5. Es_Vacia()
+            6. Tamano()
+        - Operaciones que no tienen Sentido:
+            1. Acceso directo inmediato a una posición (como en un array)
+            2. Acceso aleatorio en tiempo constante
+        - Operaciones con sentido no Indispensables:
+            1. Invertir()
+            2. Copiar()
+            3. Concatenar(Otra_lista)
+
+    1c. Lista doblemente enlazada
+        - Caracteristicas:
+            1. Cantidad de elementos: Dinamica
+            2. Tipo de datos: homogenea
+            3. Forma de acceso: Secuencial(pero en ambos sentidos)
+            4. Organizacion: Cada nodo tiene referencia al siguiente y anterior.
+            5. Permite recorrido hacia adelante y atras.
+        - Operaciones que tienen sentido:
+            1. Insertar(pos,e)
+            2. Eliminar(pos)
+            3. Buscar(e)
+            4. Recorrer_adelante()
+            5. Recorrer_atras()
+            6. Es_vacia()
+            7. Tamano()
+        - Operaciones que no tienen Sentido:
+            1. Acceso directo instantaneo a una posición
+            2. Acceso aleatorio en tiempo constante
+        - Operaciones con sentido no Indispensables:
+            1. Invertir()
+            2. Copiar()
+            3. Concatenar()
+    1d. Cola doblemente terminada 
+        - Caracteristicas:
+            1. Cantidad de elementos: dinámica.
+            2. Tipo de datos: homogénea.
+            3. Forma de acceso: restringido, pero en ambos extremos.
+            4. Organización: permite inserción y eliminación tanto al inicio como al final.
+            5. Es más flexible que una cola común.
+        - Operaciones que tienen sentido:
+            1. encolar_frente(e)
+            2. encolar_final(e)
+            3. desencolar_frente()
+            4. desencolar_final()
+            5. frente()
+            6. final()
+            7. es_vacia()
+            8. tamano()  
+        - Operaciones que no tienen Sentido:
+            1. Insertar en posiciones intermedias
+            2. Eliminar elementos del medio
+            3. Acceso directo a cualquier posición interna
+        - Operaciones con sentido no Indispensables:
+            1. vaciar()
+            2. copiar()
+            3. recorrer()
