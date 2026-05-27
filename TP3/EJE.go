@@ -66,6 +66,58 @@ func VocalesYConsonantes(texto string, n1 int, n2 int) (int, int) {
 		return VocalesYConsonantes(texto[1:], n1, n2+1)
 	}
 }
-func main() {
-	fmt.Println(SumaI(0, 10))
+
+// Forma Iterativa
+func VocalesYConsonantesI(texto string) (int, int) {
+	Vocales := "aeiou"
+	n1 := 0
+	n2 := len(texto)
+	Vocales = strings.ToLower(Vocales)
+	for i := 0; i < len(texto); i++ {
+		for j := 0; j < len(Vocales); j++ {
+			if texto[i] == Vocales[j] {
+				n1++
+			}
+		}
+	}
+	n2 = n2 - n1
+	return n1, n2
+}
+
+// Mayor elemento: dado un arreglo de enteros, devolver el mayor elemento
+// Iterativa
+func MayorI(a []int, long int) int {
+	nmax := 0
+	for i := 0; i < long; i++ {
+		if a[i] > nmax {
+			nmax = a[i]
+		}
+	}
+	return nmax
+}
+
+// Recursiva
+func Mayor(numeros []int, mayor int) int {
+	if len(numeros) == 0 {
+		return mayor
+	}
+	if numeros[0] > mayor {
+		return Mayor(numeros[1:], numeros[0])
+	}
+	return Mayor(numeros[1:], mayor)
+}
+
+// nvertir: dado un arreglo de enteros, invertirlo
+// Iterativa
+func InvertirArrayI(a []int, b []int) {
+	for i := 0; i < len(a); i++ {
+		b[i] = a[len(a)-1-i]
+	}
+}
+func InvertirArray(a []int, b []int, i int) []int {
+	if len(a) == 0 {
+		return b
+	}
+	b[len(a)-1] = a[i]
+	return InvertirArray(a[1:], b[:], i)
 }
